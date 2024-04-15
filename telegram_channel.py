@@ -5,7 +5,7 @@ import random
 
 from dotenv import load_dotenv
 
-from get_url_image import get_url_image
+from get_image import get_url_image
 
 
 def get_random_number():
@@ -26,8 +26,9 @@ def main():
     bot = telegram.Bot(token=tg_token)
 
     random_num = get_random_number()
-    document = get_url_image(random_num)
-    bot.send_document(chat_id=tg_chat_id, document=document)
+    document, alt = get_url_image(random_num)
+    bot.send_photo(chat_id=tg_chat_id, photo=document)
+    bot.send_message(chat_id=tg_chat_id, text=alt)
 
 if __name__ == "__main__":
     main()
