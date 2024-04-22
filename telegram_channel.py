@@ -30,5 +30,6 @@ def main():
     bot.send_photo(chat_id=tg_chat_id, photo=document)
     bot.send_message(chat_id=tg_chat_id, text=alt)
 
+
 if __name__ == "__main__":
     main()
