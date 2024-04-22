@@ -1,6 +1,6 @@
 import requests
 
-def get_url_image(random_num):
+def get_image_url(random_num):
     url = "https://xkcd.com/{num}/info.0.json"
     response = requests.get(url.format(num=random_num))
     response.raise_for_status()
